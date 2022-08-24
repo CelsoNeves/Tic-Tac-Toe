@@ -96,10 +96,8 @@ const checkGameOver = () => {
 };
 
 const endGame = (winnerId) => {
-  
-  console.log(winnerName.textContent)
   if(winnerId > 0) {
-    gameOverElement.firstElementChild.innerHTML = 'You Won, <span id="winner-name">' + players[winnerId].name + '</span>!'
+    gameOverElement.firstElementChild.innerHTML = 'You Won, <span id="winner-name">' + players[winnerId -1].name + '</span>!'
   }else {
     gameOverElement.firstElementChild.textContent = 'It\'s a DRAW';
   }
