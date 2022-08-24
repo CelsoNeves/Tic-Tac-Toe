@@ -1,4 +1,5 @@
 const resetGame = () => {
+    gameIsOver = false;
     activePlayer = 0;
     currentRound = 1;
     gameOverElement.firstElementChild.innerHTML = 'You Won, <span id="winner-name">Player Name</span>!';
@@ -34,7 +35,7 @@ const switchPlayer = () => {
 const selectGameField = (e) => {
   const row = e.target.dataset.row - 1;
   const col = e.target.dataset.col - 1;
-  if (gameData[row][col] > 0) return;
+  if (gameData[row][col] > 0 || gameIsOver) return;
 
   gameData[row][col] = activePlayer + 1;
 
@@ -101,5 +102,6 @@ const endGame = (winnerId) => {
   }else {
     gameOverElement.firstElementChild.textContent = 'It\'s a DRAW';
   }
+  gameIsOver = true;
   gameOverElement.style.display = 'block';
 }
