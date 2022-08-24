@@ -59,7 +59,6 @@ const checkGameOver = () => {
       gameData[i][0] === gameData[i][1] &&
       gameData[i][1] === gameData[i][2]
     ) {
-        console.log(1)
       return gameData[i][0];
     }
   }
@@ -70,7 +69,6 @@ const checkGameOver = () => {
       gameData[0][i] === gameData[1][i] &&
       gameData[1][i] === gameData[2][i]
     ) {
-        console.log(2)
       return gameData[0][i];
     }
   }
@@ -98,11 +96,12 @@ const checkGameOver = () => {
 };
 
 const endGame = (winnerId) => {
-    gameOverElement.style.display = 'block';
-
-    if(winnerId > 0) {
-        winnerName.textContent = players[winnerId].name;
-    }else {
-        gameOverElement.firstElementChild.textContent = 'It\'s a DRAW';
-    }
+  
+  console.log(winnerName.textContent)
+  if(winnerId > 0) {
+    gameOverElement.firstElementChild.innerHTML = 'You Won, <span id="winner-name">' + players[winnerId].name + '</span>!'
+  }else {
+    gameOverElement.firstElementChild.textContent = 'It\'s a DRAW';
+  }
+  gameOverElement.style.display = 'block';
 }

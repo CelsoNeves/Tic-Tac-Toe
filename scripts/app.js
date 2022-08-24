@@ -32,7 +32,6 @@ const startGameBtn = document.getElementById('start-game-btn');
 const activeGame = document.getElementById('active-game');
 const activePlayerName = document.getElementById('active-player-name');
 const gameOverElement = document.getElementById('game-over');
-const winnerName = document.getElementById('winner-name');
 
 
 const gameFieldElements = document.querySelectorAll('#game-board li');
